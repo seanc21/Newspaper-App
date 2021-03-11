@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1 class="text-center">Delete</h1>
+    <form method="POST" class="col-6 m-auto">
+        {% csrf_token %}
+        <p>Are you sure you want to delete recommendation "{{ recommendation.title }}"?</p>
+        <button class="btn btn-danger">Delete</button>
+    </form>
+{% endblock content %}
+
+<a href="{% url 'recommendation_delete' %}" class="btn btn-danger right">Delete</a>
